@@ -2,7 +2,7 @@
 
 ## 🇬🇧 English
 
-# Bachelor Thesis Project — Varna Free University
+# Bachelor Thesis Project - Varna Free University
 
 This project was developed as part of a Bachelor's thesis at **Varna Free University "Chernorizets Hrabar"**.
 
@@ -148,7 +148,7 @@ Varna Free University "Chernorizets Hrabar"
 
 # 🇧🇬 Български
 
-# Дипломна работа — Варненски свободен университет
+# Дипломна работа - Варненски свободен университет
 
 Този проект е разработен като част от дипломна работа във **Варненски свободен университет "Черноризец Храбър"**.
 
