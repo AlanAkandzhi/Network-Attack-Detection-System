@@ -430,6 +430,10 @@ with control_col1:
     if st.button("▶️ Start Monitoring", use_container_width=True):
         st.session_state.sniffing_active = True
 
+        if CLOUD_MODE:
+            add_demo_packets(count=10)
+            st.success("Cloud demo monitoring started. Demo packet batch generated.")
+
 with control_col2:
     if st.button("⏹️ Stop Monitoring", use_container_width=True):
         st.session_state.sniffing_active = False
@@ -442,6 +446,12 @@ with control_col3:
         st.success("Packet feed cleared.")
 
 
+if CLOUD_MODE and st.session_state.sniffing_active:
+    if st.button("➕ Generate More Demo Traffic", use_container_width=True):
+        add_demo_packets(count=10)
+        st.success("New simulated packet batch generated.")
+
+
 # ---------------------------------------------------
 # MONITORING LOGIC
 # ---------------------------------------------------
@@ -449,9 +459,9 @@ with control_col3:
 if st.session_state.sniffing_active:
 
     if CLOUD_MODE:
-        add_demo_packets(count=8)
-        time.sleep(1)
-        st.rerun()
+        st.info(
+            "☁️ Cloud Demo Mode is active. Click 'Generate More Demo Traffic' to simulate additional packet activity."
+        )
 
     else:
         if not SCAPY_AVAILABLE:
