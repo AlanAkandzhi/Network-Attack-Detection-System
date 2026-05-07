@@ -16,12 +16,12 @@ from auth import require_permission, logout_button
 # BACKEND DATABASE IMPORTS
 # ---------------------------------------------------
 
-BACKEND_DIR = Path(__file__).resolve().parents[2] / "backend"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-if str(BACKEND_DIR) not in sys.path:
-    sys.path.append(str(BACKEND_DIR))
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
 
-from database import init_db, save_alert
+from backend.database import init_db, save_alert
 
 init_db()
 
